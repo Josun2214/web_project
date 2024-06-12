@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자주묻는 질문</title>
+	   <script>
+      // 일정 시간 후에 페이지를 자동으로 리디렉션하는 함수
+      function redirect() {
+        window.location.href = "https://gkakxjaus24.github.io/KIOSK_tablet/언어선택.html"; // 홈페이지 URL을 변경하세요.
+      }
+      
+      // 일정 시간(밀리초) 후에 redirect() 함수를 호출합니다.
+      setTimeout(redirect, 120000); // 120000밀리초(2분) 후에 홈페이지로 이동합니다.
+    </script>
+	
+	<style>
+
+		.container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.question {
+			font-weight: bold;
+			cursor: pointer;
+			border: 1px solid black; /* 테두리 추가 */
+			padding: 10px;
+		}
+
+		.answer {
+			display: none;
+			padding: 10px;
+		}
+    .flex-item {
+      border: none;
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.5em; /* 추가된 스타일: 글자 폰트 크기 약간 증가 */
+      text-align : center;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: normal;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .button:hover, .button:focus {
+      font-weight: bold;
+      border: 1px solid black;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="question">빨래를 하고 싶어요.</div>
+		<div class="answer">빨래는 카운터 위 가방하나에 5,000원입니다(세탁/건조 포함). 돈은 빨래가방 아래쪽에 두세요. 세탁은 24시간 안에 완료 되고 끝나면 카운터 옆에 둘게요. </div>
+
+		<div class="question">출입문은 언제 닫나요?</div>
+		<div class="answer">출입문은 24시간 열려 있습니다</div>
+
+		<div class="question">마시는 물은 어디에 있나요?</div>
+		<div class="answer">주방 테이블 위의 정수기를 이용하세요(뜨거운물은 전기주전자를 사용하세요)</div>
+
+		<div class="question">수건이 더 필요해요.</div>
+		<div class="answer">다 쓴 수건은 2층 수건 바구니에 "반드시" 반납하고 카운터 오른쪽 수건 바구니에서 새 수건을 가져가세요</div>
+
+		<div class="question">와이파이는 어디에 있나요?</div>
+		<div class="answer">각 방 스위치 위쪽 또는 벽에 와이파이 아이디랑 비밀번호를 붙여 놨습니다</div>
+
+		<div class="question">조식은 언제 먹을 수 있나요?</div>
+		<div class="answer">조식은 7시부터 10시까지 주방에서 셀프로 먹을 수 있습니다.</div>
+
+		<div class="question">카운터에 왜 항상 사람이 없나요?</div>
+		<div class="answer">저희 호스텔은 무인으로 운영하고 있습니다. 인건비를 절약해서 여러분들에게 좀 더 저렴한 가격으로 게스트하우스를 이용할 수 있게 해드리고 있습니다. 하지만 도움이 필요하면 언제든지 전화주세요</div>
+
+		<div class="question">변압기와 핸드폰 충전기를 빌려주세요.</div>
+		<div class="answer">카운터 위에 있는 박스에서 가져가세요. 체크아웃 할 때 "반드시" 반납해주세요</div>
+
+		<div class="question">공용화장실이 있나요?</div>
+		<div class="answer">안타깝지만 1층에는 다른 공용화장실이 없습니다</div>
+
+		<div class="question">공용공간은 언제까지 사용할 수 있나요?</div>
+		<div class="answer">공용공간은 24시간 사용할 수 있습니다. 하지만 1층에는 다른 손님방도 있으니 밤 11시 이후 또는 이른 새벽에는 조용히 해주세요</div>
+
+		<div class="question">제 가방을 보관하고 싶어요.</div>
+		<div class="answer">체크인 전/후 카운터 앞에 짐 보관 가능합니다. </div>
+
+		<div class="question">가방 무게를 잴 수 있는 저울이 있나요?</div>
+		<div class="answer">카운터 앞 테이블에 휴대용 저울이 있습니다</div>
+
+		<div class="question">다른 도움이 더 필요해요.</div>
+		<div class="answer">반드시 카운터에 있는 전화로 전화주세요</div>
+
+
+	</div>
+    <div class="flex-item">
+      <a href="https://gkakxjaus24.github.io/KIOSK_tablet/언어선택.html" class="button" style="border: 1px solid black;">처음으로</a>
+    </div>
+	<script>
+		// 질문 클릭 시 해당 답변 보이기
+		const questions = document.querySelectorAll('.question');
+
+		questions.forEach(question => {
+			question.addEventListener('click', () => {
+				// 다른 답변 숨기기
+				document.querySelectorAll('.answer').forEach(answer => {
+					if (answer !== question.nextElementSibling) {
+						answer.style.display = 'none';
+					}
+				});
+
+				// 현재 답변 보이기
+				const answer = question.nextElementSibling;
+				if (answer.style.display === 'block') {
+					answer.style.display = 'none';
+				} else {
+					answer.style.display = 'block';
+				}
+			});
+		});
+	</script>
+</body>
+</html>

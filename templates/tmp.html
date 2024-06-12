@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Test</title>
+	<script>
+		// 일정 시간 후에 페이지를 자동으로 리디렉션하는 함수
+		function redirect() {
+			window.location.href = "https://gkakxjaus24.github.io/KIOSK_tablet/언어선택.html"; // 홈페이지 URL을 변경하세요.
+		}
+
+		// 일정 시간(밀리초) 후에 redirect() 함수를 호출합니다.
+		setTimeout(redirect, 120000); // 120000밀리초(2분) 후에 홈페이지로 이동합니다.
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="question">I want to have my laundry done.</div>
+		<div class="answer" style="display: none;">
+			<video width="560" height="315" src='../static/images/test.mp4' autoplay controls loop playsinline></video>
+			<p>Place all laundry into one of the bags provided on the reception counter (5,000 won. Both washing/drying are included). Place the laundry fee in the bag on the right. Laundry will be completed within 24 hours and can be collected from in front of the reception counter.</p>
+		</div>
+
+		<div class="question">When does the main door close?</div>
+		<div class="answer" style="display: none;">
+			<video width="560" height="315" src='../static/images/test.mp4' autoplay controls loop playsinline></video>
+			<p>The main door is open 24hrs a day.</p>
+		</div>
+	</div>
+
+	<div class="flex-item">
+		<a href="https://gkakxjaus24.github.io/KIOSK_tablet/언어선택.html" class="button" style="border: 1px solid black;">HOME</a>
+	</div>
+	<script>
+		// 질문 클릭 시 해당 답변 보이기
+		const questions = document.querySelectorAll('.question');
+
+		questions.forEach(question => {
+			question.addEventListener('click', () => {
+				// 다른 답변 숨기기
+				document.querySelectorAll('.answer').forEach(answer => {
+					if (answer !== question.nextElementSibling) {
+						answer.style.display = 'none';
+						const video = answer.querySelector('video');
+						if (video) {
+							video.pause();
+							video.currentTime = 0;
+						}
+					}
+				});
+
+				// 현재 답변 보이기
+				const answer = question.nextElementSibling;
+				const video = answer.querySelector('video');
+				if (answer.style.display === 'block') {
+					answer.style.display = 'none';
+					if (video) {
+						video.pause();
+						video.currentTime = 0;
+					}
+				} else {
+					answer.style.display = 'block';
+					if (video) {
+						video.currentTime = 0;
+						video.play();
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

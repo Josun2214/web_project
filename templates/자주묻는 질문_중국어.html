@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자주묻는 질문</title>
+	   <script>
+      // 일정 시간 후에 페이지를 자동으로 리디렉션하는 함수
+      function redirect() {
+        window.location.href = "https://gkakxjaus24.github.io/KIOSK_tablet/언어선택.html"; // 홈페이지 URL을 변경하세요.
+      }
+      
+      // 일정 시간(밀리초) 후에 redirect() 함수를 호출합니다.
+      setTimeout(redirect, 120000); // 120000밀리초(2분) 후에 홈페이지로 이동합니다.
+    </script>
+	<style>
+
+		.container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.question {
+			font-weight: bold;
+			cursor: pointer;
+			border: 1px solid black; /* 테두리 추가 */
+			padding: 10px;
+		}
+
+		.answer {
+			display: none;
+			padding: 10px;
+		}
+    .flex-item {
+      border: none;
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 2.0em; /* 추가된 스타일: 글자 폰트 크기 약간 증가 */
+      text-align : center;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: normal;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .button:hover, .button:focus {
+      font-weight: bold;
+      border: 1px solid black;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="question">如需洗衣服务。</div>
+		<div class="answer">请将衣物放入柜台上包内，一包费用5000韩元（含洗涤/干燥)。费用请放在洗衣袋下面。 24小时内完成洗涤，结束后会放在柜台旁边。  </div>
+
+		<div class="question">出入门何时关闭？</div>
+		<div class="answer">出入门24小时开放</div>
+
+		<div class="question">饮用水在哪里？</div>
+		<div class="answer">请使用厨房桌上净水器（热水请用电水壶）</div>
+
+		<div class="question">仍需毛巾。</div>
+		<div class="answer">用完的毛巾请"一定要"返还到2楼毛巾回收篮内，之后在柜台右侧毛巾筐里拿取新毛巾。</div>
+
+		<div class="question">WIFI在哪?</div>
+		<div class="answer">每个房间的开关上方或墙壁上都贴了WIFI ID和密码。</div>
+
+		<div class="question">早餐时间。</div>
+		<div class="answer">早餐可从早7点到10点于厨房用餐。</div>
+
+		<div class="question">柜台为何常没有人？</div>
+		<div class="answer">我们酒店采用无人运营方式，以节约人工费，并为大家提供更低廉的价格。 但如需帮助，请随时拨打服务电话。</div>
+
+		<div class="question">借用转换器和手机充电器。</div>
+		<div class="answer">请从柜台上透明盒子里自取。 退房的时候"一定要"返还到同位置。</div>
+
+		<div class="question">有公用卫生间吗？</div>
+		<div class="answer">很遗憾，1楼没有其他公用卫生间。</div>
+
+		<div class="question">公用空间可以使用到什么时候?</div>
+		<div class="answer">公共空间可以24小时使用。 但鉴于1楼还有别的客房，晚11点以后或凌晨请保持安静。</div>
+
+		<div class="question">包裹寄存。</div>
+		<div class="answer">入住前/后可在柜台对面保管行李。  </div>
+
+		<div class="question">有包裹计量秤吗？</div>
+		<div class="answer">柜台对面桌子上有便携式秤。</div>
+
+		<div class="question">需其他帮助。</div>
+		<div class="answer"> 请务必使用柜台座机拨打服务电话。</div>
+
+
+	</div>
+    <div class="flex-item">
+      <a href="https://gkakxjaus24.github.io/KIOSK_tablet/언어선택.html" class="button" style="border: 1px solid black;">首页</a>
+    </div>
+	<script>
+		// 질문 클릭 시 해당 답변 보이기
+		const questions = document.querySelectorAll('.question');
+
+		questions.forEach(question => {
+			question.addEventListener('click', () => {
+				// 다른 답변 숨기기
+				document.querySelectorAll('.answer').forEach(answer => {
+					if (answer !== question.nextElementSibling) {
+						answer.style.display = 'none';
+					}
+				});
+
+				// 현재 답변 보이기
+				const answer = question.nextElementSibling;
+				if (answer.style.display === 'block') {
+					answer.style.display = 'none';
+				} else {
+					answer.style.display = 'block';
+				}
+			});
+		});
+	</script>
+</body>
+</html>
